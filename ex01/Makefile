@@ -1,4 +1,4 @@
-NAME = scalarConverter
+NAME = serialization
 
 INCLUDES=-Iincludes
 
@@ -27,4 +27,3 @@ fclean		:	clean
 re			:	fclean all
 
 .PHONY		:	all clean fclean re
-

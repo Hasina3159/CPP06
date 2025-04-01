@@ -1,8 +1,10 @@
 NAME = bureaucrat
 
+INCLUDES=-Iincludes
+
 CXX = c++
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++98 $(INCLUDES)
 
 SRCS = $(shell find . -name "*.cpp" | tr '\n' ' ')
 

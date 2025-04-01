@@ -6,7 +6,7 @@
 /*   By: ntodisoa <ntodisoa@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/29 12:40:52 by ntodisoa          #+#    #+#             */
-/*   Updated: 2025/03/29 15:34:45 by ntodisoa         ###   ########.fr       */
+/*   Updated: 2025/04/01 16:06:02 by ntodisoa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,35 +62,25 @@ bool sto(const std::string &str, const std::string &type)
 		return (false);
 		
 	return (true);	
-
 }
 
-/*template <typename T>
 
-T print(const std::string &str, const std::string &type)
+template <typename T>
+T stringTo(const std::string &str)
 {
-	T var;
+	T value;
+	std::stringstream ss(str);
+	ss >> value;
+	return (value);
+}
 
-	std::cout << type << ": " << std::flush;
-	
-	try
-	{
-		if (type == "char")
-			var = sto<unsigned int>(str);
-		else
-			var = sto<T>(str);
-		
-		std::cout << var << std::flush;
 
-		if ((type == "float" || type == "double") && (var - static_cast<int>(var)) == 0.0)
-			std::cout << ".0" << std::flush;
-		if (type == "float")
-			std::cout << "f" << std::flush;
-		std::cout << std::endl;
-	}
-	catch(...)
-	{
-		std::cout << "impossible" << std::endl;
-	}
-	return (var);
-}*/
+template <typename T1, typename T2, typename T3, typename T4>
+inline void cast(const std::string &str, T1 &v1, T2 &v2, T3 &v3, T4 &v4)
+{
+	if (static_cast<int>(v1) == 0)
+		v1 = stringTo<T1>(str);
+	v2 = static_cast<T2>(v1);
+	v3 = static_cast<T3>(v1);
+	v4 = static_cast<T4>(v1);
+}
